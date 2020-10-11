@@ -1,5 +1,3 @@
-import org.w3c.dom.Text;
-
 import java.util.Arrays;
 
 public class DisplayBuffer {
@@ -32,9 +30,18 @@ public class DisplayBuffer {
         buffer = new TextToDisplay[0];
     }
 
-    public static void printAll(TextToDisplay[] objects) {
+    public static void printAll(TextToDisplay... objects) {
         queue(objects);
         printAll();
     }
 
+    public static void printAndGetInput(TextToDisplay ...objects) {
+        queue(objects);
+        queue(InputBuffer.userInput());
+        printAll();
+    }
+
+    public static TextToDisplay last() {
+        return buffer[buffer.length - 1];
+    }
 }

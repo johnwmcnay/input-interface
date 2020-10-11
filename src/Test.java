@@ -12,25 +12,7 @@ public class Test {
                 "Drink",
                 "Sit");
 
-        TextToDisplay[] test1 = {menu1, InputBuffer.userInput()};
-        DisplayBuffer.printAll(test1);
-
-        TextToDisplay[] test2 = {menu2, InputBuffer.userInput()};
-        DisplayBuffer.printAll(test2);
-
-//        Option.resetCount();
-//        for (TextToDisplay obj: test) {
-//            obj.print();
-//        }
-//        input.promptUser();
-//
-//        //encapsulate in a object/method--+
-//        Option.resetCount();           // |
-//        for (TextToDisplay obj: test) {// |
-//            obj.print();               // |
-//        }                              // |
-//        input.promptUser();            //<+
-
-
+        DisplayBuffer.printAndGetInput(menu1);
+        DisplayBuffer.printAndGetInput(menu2);
     }
 }
