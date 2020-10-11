@@ -1,18 +1,21 @@
-//TODO: start with the ability to prompt and answer
-
 import java.util.Scanner;
 
-public class Input {
+public class Input implements TextToDisplay {
 
-    private String prompt;
-    private Scanner scanner;
+    private static String prompt;
+    private static final Scanner scanner = new Scanner(System.in);
 
-    public Input() {
-        this.scanner = new Scanner(System.in);;
+    public Input(String str) {
+        prompt = str;
     }
 
-    public String promptUser() {
-        System.out.print(">> ");
-        return this.scanner.nextLine();
+    public String getInput() {
+        return scanner.nextLine();
+    }
+
+    @Override
+    public void print() {
+        System.out.print(prompt);
+        InputBuffer.push(getInput());
     }
 }

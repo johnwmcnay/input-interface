@@ -1,28 +1,18 @@
 public class Test {
 
     public static void main(String[] args) {
-        Input input = new Input();
-        Prompt prompt = new Prompt("Where do you want to go?");
-        //menu is full of options
-        Option option1 = new Option("Work");
-        Option option2 = new Option("Restaurant");
-        Option option3 = new Option("Nowhere");
 
-        TextToDisplay[] test = {prompt, option1, option2, option3};
+        Menu menu1 = new Menu("Where do you want to go?",
+                "Work",
+                "Restaurant",
+                "Nowhere");
 
-        Option.resetCount();
-        for (TextToDisplay obj: test) {
-            obj.print();
-        }
-        input.promptUser();
+        Menu menu2 = new Menu("What do you want to do?",
+                "Eat",
+                "Drink",
+                "Sit");
 
-        //encapsulate in a object/method--+
-        Option.resetCount();           // |
-        for (TextToDisplay obj: test) {// |
-            obj.print();               // |
-        }                              // |
-        input.promptUser();            //<+
-
-
+        DisplayBuffer.printAndGetInput(menu1);
+        DisplayBuffer.printAndGetInput(menu2);
     }
 }
