@@ -2,15 +2,21 @@ public class Test {
 
     public static void main(String[] args) {
 
-        Prompt prompt = new Prompt("Where do you want to go?");
-        //menu is full of options
-        Option option1 = new Option("Work");
-        Option option2 = new Option("Restaurant");
-        Option option3 = new Option("Nowhere");
+        Menu menu1 = new Menu("Where do you want to go?",
+                "Work",
+                "Restaurant",
+                "Nowhere");
 
-        TextToDisplay[] test = {prompt, option1, option2, option3, InputBuffer.userInput()};
+        Menu menu2 = new Menu("What do you want to do?",
+                "Eat",
+                "Drink",
+                "Sit");
 
-        DisplayBuffer.printAll(test);
+        TextToDisplay[] test1 = {menu1, InputBuffer.userInput()};
+        DisplayBuffer.printAll(test1);
+
+        TextToDisplay[] test2 = {menu2, InputBuffer.userInput()};
+        DisplayBuffer.printAll(test2);
 
 //        Option.resetCount();
 //        for (TextToDisplay obj: test) {

@@ -1,3 +1,5 @@
+import org.w3c.dom.Text;
+
 import java.util.Arrays;
 
 public class DisplayBuffer {
@@ -8,16 +10,12 @@ public class DisplayBuffer {
         return buffer;
     }
 
-    public static void queue(TextToDisplay obj) {
-        push(obj);
-    }
-
     public static void push(TextToDisplay obj) {
         buffer = Arrays.copyOf(buffer, buffer.length + 1);
         buffer[buffer.length - 1] = obj;
     }
 
-    public static void queue(TextToDisplay[] objects) {
+    public static void queue(TextToDisplay ...objects) {
         for (TextToDisplay obj: objects) {
             push(obj);
         }
@@ -27,6 +25,11 @@ public class DisplayBuffer {
         for (TextToDisplay obj: buffer) {
             obj.print();
         }
+        resetBuffer();
+    }
+
+    public static void resetBuffer() {
+        buffer = new TextToDisplay[0];
     }
 
     public static void printAll(TextToDisplay[] objects) {

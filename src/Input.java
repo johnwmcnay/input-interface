@@ -9,12 +9,13 @@ public class Input implements TextToDisplay {
         prompt = str;
     }
 
+    public String getInput() {
+        return scanner.nextLine();
+    }
+
+    @Override
     public void print() {
         System.out.print(prompt);
         InputBuffer.push(getInput());
-    }
-
-    public String getInput() {
-        return scanner.nextLine();
     }
 }
