@@ -10,18 +10,20 @@ public class Test {
 
         TextToDisplay[] test = {prompt, option1, option2, option3};
 
-        Option.resetCount();
-        for (TextToDisplay obj: test) {
-            obj.print();
-        }
-        input.promptUser();
+        DisplayBuffer.printAll(test);
 
-        //encapsulate in a object/method--+
-        Option.resetCount();           // |
-        for (TextToDisplay obj: test) {// |
-            obj.print();               // |
-        }                              // |
-        input.promptUser();            //<+
+//        Option.resetCount();
+//        for (TextToDisplay obj: test) {
+//            obj.print();
+//        }
+//        input.promptUser();
+//
+//        //encapsulate in a object/method--+
+//        Option.resetCount();           // |
+//        for (TextToDisplay obj: test) {// |
+//            obj.print();               // |
+//        }                              // |
+//        input.promptUser();            //<+
 
 
     }

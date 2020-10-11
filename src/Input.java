@@ -2,7 +2,7 @@
 
 import java.util.Scanner;
 
-public class Input {
+public class Input implements TextToDisplay {
 
     private String prompt;
     private Scanner scanner;
@@ -11,8 +11,8 @@ public class Input {
         this.scanner = new Scanner(System.in);;
     }
 
-    public String promptUser() {
+    public void print() {
         System.out.print(">> ");
-        return this.scanner.nextLine();
+        this.scanner.nextLine();
     }
 }
